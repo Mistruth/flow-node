@@ -1,0 +1,12 @@
+.tag {
+  height: 100px;
+  width: 100px;
+  background-color:pink;
+}
+.container {
+  width: 500px;
+  height: 500px;
+  margin:0 auto;
+  position: relative;
+  background-color: teal;
+}

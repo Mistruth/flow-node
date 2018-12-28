@@ -11,23 +11,30 @@ const desc = '.runtime'
 const config = {
 
   entry:'src/index.js',
-
-  targets:[
-    {format:'cjs',dest:`dist/${pack.name}${desc}.common.js`}
-  ],
+  
+  output: {
+    file: 'bundle.js',
+    format: 'umd',
+    name: 'MyBundle'
+  },
 
   plugins:[
     vue(VueConfig),
-    buble()
+    buble({})
+  ],
+
+  targets:[
+    { format:'cjs',dest:`dist/${pack.name}${desc}.common.js`},
+    { dest: 'dist/flow-node.js', format: 'umd', moduleName:'flow-node' }
   ],
 
   watch: {
     exclude: 'node_modules/**'
   },
 
-  cache:true,
+  cache:true
 
-  sourcemap:false
+  // sourcemap:false
 
 }
 
